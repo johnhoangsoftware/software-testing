@@ -1,14 +1,14 @@
-import selenium
+from selenium import selenium
 import HtmlTestRunner
-import unittest, time
+import unittest, time, re
+
+selenium.unicode = str
 
 class NewTest(unittest.TestCase):
     def setUp(self):
         print("========== [Begin Test] ==========")
-        
-
         self.verificationErrors = []
-        self.selenium = selenium("localhost", 4444, "*chrome", "http://www.google.com/")
+        self.selenium = selenium.selenium("127.0.0.1", 4444, "*chrome", "http://www.google.com/")
         self.selenium.start()
     
     def test_new(self):
