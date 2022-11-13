@@ -1,10 +1,12 @@
 import selenium
 import HtmlTestRunner
-import unittest, time, re
+import unittest, time
 
 class NewTest(unittest.TestCase):
     def setUp(self):
         print("========== [Begin Test] ==========")
+        
+
         self.verificationErrors = []
         self.selenium = selenium("localhost", 4444, "*chrome", "http://www.google.com/")
         self.selenium.start()
@@ -23,4 +25,4 @@ class NewTest(unittest.TestCase):
         print("========== [ End Test ] ========== \n")
 
 if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='../reports'))
+    unittest.main()#testRunner=HtmlTestRunner.HTMLTestRunner(output='../reports'))
