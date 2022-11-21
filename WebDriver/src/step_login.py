@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
@@ -14,7 +16,9 @@ class StepLogin:
     def login(self, username, password):
         print("[Step] Login")
         self.input_user_name(username)
+        time.sleep(2)
         self.input_password(password)
+        time.sleep(2)
         self.click_button_login()
 
     # Action

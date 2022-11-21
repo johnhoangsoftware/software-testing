@@ -16,7 +16,7 @@ class CheckPage:
     # Get element
     def waitLoginFinish(self):
         print("[+] Wait login finish")
-        time.sleep(15)
+        time.sleep(7)
         try:
             self.driver.find_element(By.ID, get_id_username())
             return "Login Page"

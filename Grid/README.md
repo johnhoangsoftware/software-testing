@@ -14,7 +14,7 @@
 - Mỗi khi chạy, cần chạy Selenium Server (mặc định ở LocalHost:4444): `java -jar selenium-server-4.6.0.jar standalone`
     (hoặc `java -jar selenium-server-4.6.0.jar hub`, `java -jar selenium-server-4.6.0.jar node`)
 
-- Ở một terminal khác, chạy file [main.py](./main.py): `py main.py`
+- Ở một terminal khác, chạy file [main.py](./main.py): `py ./tests/test.py`
 
 ## Lưu ý
 - File [test.py](./tests/test.py) chỉ chạy được ở các phiên bản selenium từ 1 và 2. 

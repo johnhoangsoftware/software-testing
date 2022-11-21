@@ -5,11 +5,11 @@ from datetime import datetime
 from unittest import TextTestRunner
 from result_report import HtmlTestResult
 
-
 UTF8 = "UTF-8"
 
+
 class HTMLTestRunner(TextTestRunner):
-    """" A test runner class that output the results. """
+    """ A test runner class that output the results. """
 
     time_format = "%Y-%m-%d_%H-%M-%S"
 

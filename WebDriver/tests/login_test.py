@@ -1,23 +1,36 @@
+import os
+import sys
+module_path = os.path.abspath(os.getcwd() + '/src')
+if module_path not in sys.path:
+    sys.path.append(module_path)
+
 import unittest
+
+import HtmlTestRunner
 
 from check_page import CheckPage
 from custom_chrome import custom_chrome
-from runner_report import HTMLTestRunner
 from step_login import StepLogin
 
 
-
-
 class MyTestCase(unittest.TestCase):
+    @classmethod
     def setUp(self):
         print("========== [Begin Test] ==========")
+
+        # add extensions
+        # executable_path = "path_to_webdriver"
+        # os.environ["webdriver.chrome.driver"] = executable_path
+        # chrome_options = Options()
+        # chrome_options.add_extension('path_to_extension')
+
         self.browser = custom_chrome()
         self.browser.get("http://www.facebook.com")
         f = open('data_test', 'r')
-
         self.data_test = f.read().split('\n')
         f.close()
 
+    @classmethod
     def tearDown(self):
         self.browser.quit()
         print("========== [ End Test ] ========== \n")
@@ -84,4 +97,7 @@ class MyTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(testRunner=HTMLTestRunner(output='./reports'))
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='E:/Study/KiemThu/software-testing/WebDriver/reports'))
+
+    #get()
+    #find_element()
